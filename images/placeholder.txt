@@ -1,0 +1,22 @@
+# Imágenes del Proyecto EcoSmart
+
+Esta carpeta contiene las imágenes utilizadas en el sitio web del tanque de basura inteligente.
+
+## Imágenes necesarias:
+
+1. **product-hero.jpg** - Imagen principal del producto (1200x800px)
+2. **product-features.jpg** - Imagen de características del producto (800x600px)
+3. **app-screenshot.jpg** - Captura de pantalla de la aplicación móvil (400x800px)
+4. **company-logo.png** - Logo de la empresa EcoSmart (200x200px)
+5. **tank-icon.svg** - Icono del tanque para el mapa (32x32px)
+
+## Notas:
+
+- Todas las imágenes deben estar optimizadas para web
+- Usar formatos modernos como WebP cuando sea posible
+- Incluir versiones de alta resolución para pantallas Retina
+- Las imágenes deben ser responsivas y adaptarse a diferentes tamaños de pantalla
+
+## Placeholder actual:
+
+El sitio web actualmente utiliza iconos de Font Awesome y elementos CSS para representar visualmente el producto. Para una implementación completa, se recomienda reemplazar estos placeholders con imágenes reales del producto.

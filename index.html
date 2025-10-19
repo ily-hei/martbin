@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMARTBIN - Tanque de Basura Inteligente</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Leaflet CSS for OpenStreetMap -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-recycle"></i>
+                    <span class="brand-name">SMARTBIN</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="#app">App</a></li>
+                    <li><a href="#mapa">Mapa</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Tanque de Basura Inteligente</h1>
+                <p class="hero-subtitle">La revolución en gestión de residuos con tecnología sin contacto</p>
+                <p class="hero-description">
+                    Descubre el futuro de la gestión de basura con nuestro tanque inteligente que se abre automáticamente, 
+                    previene la contaminación y optimiza la recolección mediante tecnología IoT.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('contacto')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Comprar Ahora
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('caracteristicas')">
+                        <i class="fas fa-play"></i>
+                        Ver Demo
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="product-showcase">
+                    <img src="images/logo-smartbin.png" alt="SMARTBIN - Tanque de Basura Inteligente" class="product-image">
+                    <div class="sensor-indicator"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Beneficios Principales</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-paper"></i>
+                    </div>
+                    <h3>Sin Contacto</h3>
+                    <p>Apertura automática mediante sensor de proximidad, eliminando la necesidad de tocar el tanque.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Control Inteligente</h3>
+                    <p>Monitorea el nivel de llenado en tiempo real a través de nuestra aplicación móvil.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3>Prevención de Contaminación</h3>
+                    <p>Reduce significativamente el riesgo de propagación de bacterias y virus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="caracteristicas" class="features">
+        <div class="container">
+            <h2 class="section-title">Características del Producto</h2>
+            <div class="features-content">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Sensor de Apertura Automática</h3>
+                        <p>Tecnología de proximidad avanzada que detecta la presencia y abre el tanque automáticamente, 
+                        garantizando una experiencia completamente sin contacto.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Monitoreo de Nivel de Llenado</h3>
+                        <p>Integración completa con nuestra app para monitorear en tiempo real el nivel de llenado 
+                        y optimizar las rutas de recolección.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Alertas Inteligentes</h3>
+                        <p>Sistema de notificaciones automáticas para mantenimiento, cambio de bolsas y 
+                        alertas cuando el tanque está lleno.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Section -->
+    <section id="app" class="app-section">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-text">
+                    <h2>App SMARTBIN</h2>
+                    <p class="app-description">
+                        Nuestra aplicación móvil revoluciona la gestión de residuos para empresas y municipios. 
+                        Obtén control total sobre tus tanques inteligentes desde cualquier lugar.
+                    </p>
+                    <div class="app-features">
+                        <div class="app-feature">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Rutas optimizadas de recolección</span>
+                        </div>
+                        <div class="app-feature">
+                            <i class="fas fa-bell"></i>
+                            <span>Notificaciones en tiempo real</span>
+                        </div>
+                        <div class="app-feature">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analytics y reportes detallados</span>
+                        </div>
+                        <div class="app-feature">
+                            <i class="fas fa-users"></i>
+                            <span>Gestión de equipos de recolección</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-download"></i>
+                        Descargar App
+                    </button>
+                </div>
+                <div class="app-mockup">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="app-interface">
+                                <div class="app-header">
+                                    <h4>SMARTBIN Dashboard</h4>
+                                </div>
+                                <div class="app-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">24</span>
+                                        <span class="stat-label">Tanques Activos</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">8</span>
+                                        <span class="stat-label">Llenos</span>
+                                    </div>
+                                </div>
+                                <div class="app-map-preview">
+                                    <i class="fas fa-map"></i>
+                                    <span>Ver Mapa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="mapa" class="map-section">
+        <div class="container">
+            <h2 class="section-title">Red de Tanques Inteligentes en Panamá</h2>
+            <p class="section-subtitle">Visualiza la ubicación de todos nuestros tanques distribuidos por Panamá</p>
+            
+            <div class="map-container">
+                <div id="map" class="map"></div>
+                <div class="map-controls">
+                    <div class="control-panel">
+                        <h4>Panel de Control</h4>
+                        <div class="control-item">
+                            <label>
+                                <input type="checkbox" id="show-full" checked>
+                                Tanques Llenos
+                            </label>
+                        </div>
+                        <div class="control-item">
+                            <label>
+                                <input type="checkbox" id="show-empty" checked>
+                                Tanques Vacíos
+                            </label>
+                        </div>
+                        <div class="control-item">
+                            <label>
+                                <input type="checkbox" id="show-routes">
+                                Rutas de Recolección
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-stats">
+                <div class="stat-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Ubicaciones</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-truck"></i>
+                    <span class="stat-number">25</span>
+                    <span class="stat-label">Rutas Activas</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Monitoreo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto y Compra</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Información de la Empresa</h3>
+                    <div class="info-item">
+                        <i class="fas fa-building"></i>
+                        <div>
+                            <h4>SMARTBIN Solutions</h4>
+                            <p>Líder en tecnología IoT para gestión de residuos en Panamá</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+507 2000-1234</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>smartbin@ecosmart.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Clayton Innovation Center<br>Edificio 123, Oficina 45<br>Clayton, Ciudad de Panamá, Panamá</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <h3>Solicitar Demo o Compra</h3>
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Empresa/Organización</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Tipo de Interés</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="demo">Solicitar Demo</option>
+                            <option value="purchase">Compra Directa</option>
+                            <option value="partnership">Alianza Comercial</option>
+                            <option value="info">Más Información</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Cantidad de Tanques</label>
+                        <input type="number" id="quantity" name="quantity" min="1" placeholder="Ej: 10">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje Adicional</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Cuéntanos más sobre tus necesidades..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-paper-plane"></i>
+                        Enviar Solicitud
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-recycle"></i>
+                    <span class="brand-name">SMARTBIN</span>
+                </div>
+                    <p>Revolucionando la gestión de residuos en Panamá con tecnología inteligente y sostenible.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Producto</h4>
+                    <ul>
+                        <li><a href="#caracteristicas">Características</a></li>
+                        <li><a href="#app">App Móvil</a></li>
+                        <li><a href="#mapa">Red de Tanques</a></li>
+                        <li><a href="#contacto">Precios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="#">Centro de Ayuda</a></li>
+                        <li><a href="#">Documentación</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Estado del Sistema</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Acerca de Nosotros</a></li>
+                        <li><a href="#">Carreras</a></li>
+                        <li><a href="#">Prensa</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SMARTBIN Solutions, Panamá. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JavaScript for OpenStreetMap -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="maps/map-config.js"></script>
+    <script src="js/script.js"></script>
+    
+    <!-- Initialize map when page loads -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a bit for Leaflet to load
+            setTimeout(function() {
+                if (typeof L !== 'undefined') {
+                    initMap();
+                } else {
+                    console.log('Leaflet not loaded, showing placeholder');
+                    showMapPlaceholder();
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
